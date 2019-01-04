@@ -2,4 +2,4 @@
 /* /:splat 200! Role=user, editor
 
 # Else, redirect them to login site.
-/* https://festive-brown-c3df1a.netlify.com.netlify.com/ 302!
+/* https://festive-brown-c3df1a.netlify.com/ 302!
