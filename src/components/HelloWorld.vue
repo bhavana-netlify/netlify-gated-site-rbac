@@ -4,7 +4,10 @@
 
 <script>
 export default {
-  name: "HelloWorld"
+  name: "HelloWorld",
+  created() {
+    console.log("hits this");
+  }
 };
 </script>
 
