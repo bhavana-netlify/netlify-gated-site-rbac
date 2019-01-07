@@ -6,5 +6,11 @@
 [[redirects]]
   from="https://festive-brown-c3df1a.netlify.com/"
   to="https://objective-brown-c0bc88.netlify.com/.netlify/functions/set-cookie"
-  query = {token = ":token", site=":site"}
-  status = 200
+  query={token = ":token", site=":site"}
+  status=200
+
+[[redirects]]
+  from="https://objective-brown-c0bc88.netlify.com/*"
+  to="/index.html"
+  status=200!
+  conditions=Role=["editor"]
