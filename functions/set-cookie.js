@@ -5,8 +5,11 @@ exports.handler = function(event, context, callback) {
   const params = event.queryStringParameters;
 
   const authToken = params.token;
+  const url = params.site;
 
   const secret = "suchSecretsMuchToHide";
+  console.log("token ", authToken);
+  console.log("from site ", url);
 
   try {
     var valid = jwt.verify(authToken, secret);
@@ -28,6 +31,7 @@ exports.handler = function(event, context, callback) {
   callback(null, {
     statusCode: 200,
     headers: {
+      Location: url,
       "Set-Cookie": netlifyCookie,
       "Cache-Control": "no-cache"
     },
