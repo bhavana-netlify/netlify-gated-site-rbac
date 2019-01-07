@@ -13,7 +13,7 @@ exports.handler = function(event, context, callback) {
     console.log("is Valid", valid);
     console.log("token is valid ", authToken);
   } catch (e) {
-    console.log("Error");
+    console.log("Error", e);
   }
 
   var hour = 3600000;
