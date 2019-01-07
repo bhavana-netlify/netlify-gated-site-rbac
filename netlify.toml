@@ -10,7 +10,13 @@
   status=200
 
 [[redirects]]
-  from="https://objective-brown-c0bc88.netlify.com/*"
+  from="/*"
   to="/index.html"
   status=200
   conditions={Role=["editor"]}
+
+[[redirects]]
+  from="/*"
+  to="https://festive-brown-c3df1a.netlify.com/"
+  status=302
+  query={site = ":site", splat = ":splat"}
