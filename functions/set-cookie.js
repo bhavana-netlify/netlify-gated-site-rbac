@@ -2,21 +2,35 @@ const cookie = require("cookie");
 const jwt = require("jsonwebtoken");
 
 exports.handler = function(event, context, callback) {
-  const { headers } = event;
-  const cookieHeader = headers.cookie || "";
-  const cookies = cookie.parse(cookieHeader);
+  const params = event.queryStringParameters;
 
-  console.log(cookies);
-  console.log(cookies.nf_jwt);
+  const authToken = params.token;
+
+  const secret = "suchSecretsMuchToHide";
 
   try {
-    console.log(jwt.decode(cookies.nf_jwt, { complete: true }));
+    var valid = jwt.verify(authToken, secret);
+    console.log("is Valid", valid);
+    console.log("token is valid ", authToken);
   } catch (e) {
-    console.log(e);
+    console.log("Error");
   }
+
+  var hour = 3600000;
+  var twoWeeks = 14 * 24 * hour;
+  const netlifyCookie = cookie.serialize("nf_jwt", authToken, {
+    secure: true,
+    httpOnly: true,
+    path: "/",
+    maxAge: twoWeeks
+  });
 
   callback(null, {
     statusCode: 200,
+    headers: {
+      "Set-Cookie": netlifyCookie,
+      "Cache-Control": "no-cache"
+    },
     body: JSON.stringify({ msg: "hello" })
   });
 };
