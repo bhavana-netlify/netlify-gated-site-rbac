@@ -13,4 +13,4 @@
   from="https://objective-brown-c0bc88.netlify.com/*"
   to="/index.html"
   status=200
-  conditions=Role=["editor"]
+  conditions={Role=["editor"]}
