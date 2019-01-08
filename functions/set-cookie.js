@@ -15,6 +15,7 @@ exports.handler = function(event, context, callback) {
     var valid = jwt.verify(authToken, secret);
     console.log("is Valid", valid);
     console.log("token is valid ", authToken);
+    console.log(valid.app_metadata.authorization.roles);
   } catch (e) {
     console.log("Error", e);
   }
