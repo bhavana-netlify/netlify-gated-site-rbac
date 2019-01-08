@@ -5,11 +5,11 @@ exports.handler = function(event, context, callback) {
   const params = event.queryStringParameters;
 
   const authToken = params.token;
-  const url = params.site;
+  const redirectURL = params.url;
 
   const secret = "suchSecretsMuchToHide";
   console.log("token ", authToken);
-  console.log("from site ", url);
+  console.log("redirect to site ", redirectURL);
 
   try {
     var valid = jwt.verify(authToken, secret);
@@ -28,13 +28,30 @@ exports.handler = function(event, context, callback) {
     maxAge: twoWeeks
   });
 
+  const html = `
+  <html lang="en">
+    <head>
+      <meta charset="utf-8">
+    </head>
+    <body>
+      <noscript>
+        <meta http-equiv="refresh" content="0; url=${redirectURL}" />
+      </noscript>
+    </body>
+    <script>
+      setTimeout(function(){
+        window.location.href = ${JSON.stringify(redirectURL)}
+      }, 0)
+    </script>
+  </html>`;
+
   callback(null, {
     statusCode: 200,
     headers: {
-      Location: url,
       "Set-Cookie": netlifyCookie,
-      "Cache-Control": "no-cache"
+      "Cache-Control": "no-cache",
+      "Content-Type": "text/html"
     },
-    body: JSON.stringify({ msg: "hello" })
+    body: html
   });
 };
