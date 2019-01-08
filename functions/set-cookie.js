@@ -35,7 +35,7 @@ exports.handler = function(event, context, callback) {
     </head>
     <body>
       <noscript>
-        <meta http-equiv="refresh" content="0; url=${redirectURL}" />
+        <meta http-equiv="refresh" content="50; url=${redirectURL}" />
       </noscript>
     </body>
     <script>
