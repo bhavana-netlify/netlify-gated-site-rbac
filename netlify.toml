@@ -3,19 +3,3 @@
   command = "yarn run build"
   publish = "dist"
   NODE_ENV = "8.11.3"
-[[redirects]]
-  from="/*"
-  to="/.netlify/functions/set-cookie"
-  query={site = ":site", token = ":token"}
-  
-[[redirects]]
-  from="/*"
-  to="/index.html"
-  status=200
-  conditions={Role=["editor"]}
-
-[[redirects]]
-  from="/*"
-  to="https://festive-brown-c3df1a.netlify.com/"
-  status=302
-  query={site = ":site", splat = ":splat"}
