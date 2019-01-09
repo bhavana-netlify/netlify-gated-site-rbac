@@ -42,7 +42,7 @@ exports.handler = function(event, context, callback) {
     <script>
       setTimeout(function(){
         window.location.href = ${JSON.stringify(redirectURL)}
-      }, 0)
+      }, 5000)
     </script>
   </html>`;
 
