@@ -46,6 +46,9 @@ exports.handler = function(event, context, callback) {
     </script>
   </html>`;
 
+  console.log(netlifyCookie);
+  console.log("redirecting....", redirectURL);
+
   callback(null, {
     statusCode: 200,
     headers: {
