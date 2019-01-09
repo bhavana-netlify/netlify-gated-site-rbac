@@ -29,34 +29,33 @@ exports.handler = function(event, context, callback) {
     maxAge: twoWeeks
   });
 
-  // const html = `
-  // <html lang="en">
-  //   <head>
-  //     <meta charset="utf-8">
-  //   </head>
-  //   <body>
-  //     <noscript>
-  //       <meta http-equiv="refresh" content="50; url=${redirectURL}" />
-  //     </noscript>
-  //   </body>
-  //   <script>
-  //     setTimeout(function(){
-  //       window.location.href = ${JSON.stringify(redirectURL)}
-  //     }, 5000)
-  //   </script>
-  // </html>`;
+  const html = `
+  <html lang="en">
+    <head>
+      <meta charset="utf-8">
+    </head>
+    <body>
+      <noscript>
+        <meta http-equiv="refresh" content="50; url=${redirectURL}" />
+      </noscript>
+    </body>
+    <script>
+      setTimeout(function(){
+        window.location.href = ${JSON.stringify(redirectURL)}
+      }, 5000)
+    </script>
+  </html>`;
 
   console.log(netlifyCookie);
   console.log("redirecting....", redirectURL);
 
   callback(null, {
-    statusCode: 302,
+    statusCode: 200,
     headers: {
-      Location: redirectURL,
       "Set-Cookie": netlifyCookie,
       "Cache-Control": "no-cache",
       "Content-Type": "text/html"
     },
-    body: JSON.stringify({ msg: "im a little teapot" })
+    body: html
   });
 };
