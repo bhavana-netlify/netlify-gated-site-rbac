@@ -1,5 +1,5 @@
 # If visitor has 'nf_jwt' with specific roles set, let them in.
-/* /index.html 200! Role=editor
+/* /:splat 200! Role=*
 
 # Else, redirect them to login portal site.
 /* https://festive-brown-c3df1a.netlify.com/?site=https://objective-brown-c0bc88.netlify.com/:splat 302!
