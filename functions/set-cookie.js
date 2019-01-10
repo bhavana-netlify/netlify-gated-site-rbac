@@ -36,13 +36,13 @@ exports.handler = function(event, context, callback) {
     </head>
     <body>
       <noscript>
-        <meta http-equiv="refresh" content="50; url=${redirectURL}" />
+        <meta http-equiv="refresh" content="0; url=${redirectURL}" />
       </noscript>
     </body>
     <script>
       setTimeout(function(){
         window.location.href = ${JSON.stringify(redirectURL)}
-      }, 5000)
+      }, 0)
     </script>
   </html>`;
 
