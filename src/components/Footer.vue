@@ -3,7 +3,7 @@
     <div>
       <a href="https://festive-brown-c3df1a.netlify.com">Back to Login Site</a>
     </div>
-    <button @click="deleteCookie">Delete Cookie</button>
+    <div><a href="/.netlify/functions/delete-cookie`">Delete Cookie</a></div>
   </div>
 </template>
 
