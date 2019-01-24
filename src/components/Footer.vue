@@ -1,7 +1,7 @@
 <template>
   <div id="footer">
     <div>
-      <a href="https://festive-brown-c3df1a.netlify.com">Back to Login Site</a>
+      <a href="https://login-to-gated-site.netlify.com">Back to Login Site</a>
     </div>
     <div><a href="/.netlify/functions/delete-cookie">Delete Cookie</a></div>
   </div>
