@@ -2,4 +2,4 @@
 /* /:splat 200! Role=admin,editor
 
 # Else, redirect them to login portal site.
-/* https://login-to-gated-site.netlify.com/?site=https://objective-brown-c0bc88.netlify.com/:splat 302!
+/* https://login-to-gated-site.netlify.com/?site=https://gated-site.netlify.com/:splat 302!
