@@ -1,5 +1,5 @@
 <template>
-  <div class="hello"><h1>Welcome to this super secret gated site Internal Salesforce</h1></div>
+  <div class="hello"><h1>Welcome to this super secret gated site</h1></div>
 </template>
 
 <script>
